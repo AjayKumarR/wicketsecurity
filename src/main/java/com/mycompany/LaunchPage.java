@@ -1,3 +1,6 @@
+/*
+ * This is free and unencumbered software released into the public domain.
+ */
 package com.mycompany;
 
 
@@ -20,6 +23,6 @@ public class LaunchPage extends MyBasePage
         {
             setResponsePage(LoginPage.class);
         }
-        add(new Label("label1", "Click on a link above for RBAC administration."));
+        add(new Label("label1", "You have access to the link(s) above."));
     }
 }

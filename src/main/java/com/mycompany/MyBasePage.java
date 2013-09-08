@@ -1,3 +1,6 @@
+/*
+ * This is free and unencumbered software released into the public domain.
+ */
 package com.mycompany;
 
 import org.apache.log4j.Logger;
@@ -37,6 +40,6 @@ public abstract class MyBasePage extends WebPage
             }
         };
         add( actionLink );
-        add( new Label( "footer", "No Copyright" ) );
+        add( new Label( "footer", "This is free and unencumbered software released into the public domain." ) );
     }
 }
