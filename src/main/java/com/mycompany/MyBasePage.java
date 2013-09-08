@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.request.http.handler.RedirectRequestHandler;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -36,7 +37,7 @@ public abstract class MyBasePage extends WebPage
                 HttpServletRequest servletReq = ( HttpServletRequest ) getRequest().getContainerRequest();
                 servletReq.getSession().invalidate();
                 getSession().invalidate();
-                setResponsePage( LaunchPage.class );
+                getRequestCycle().scheduleRequestHandlerAfterCurrent(new RedirectRequestHandler("/login/login.html"));
             }
         };
         add( actionLink );

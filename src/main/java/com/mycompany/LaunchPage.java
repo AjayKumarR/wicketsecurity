@@ -1,5 +1,5 @@
 /*
- * This is free and unencumbered software released into the public domain.
+ * Copyright (c) 2013, JoshuaTree Software. All rights reserved.
  */
 package com.mycompany;
 
@@ -17,12 +17,13 @@ public class LaunchPage extends MyBasePage
 {
     public LaunchPage()
     {
-        HttpServletRequest servletReq = (HttpServletRequest)getRequest().getContainerRequest();
+ /*       HttpServletRequest servletReq = (HttpServletRequest)getRequest().getContainerRequest();
         Principal principal = servletReq.getUserPrincipal();
         if(principal == null)
         {
             setResponsePage(LoginPage.class);
         }
+ */
         add(new Label("label1", "You have access to the link(s) above."));
     }
 }
