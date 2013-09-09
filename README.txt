@@ -1,35 +1,36 @@
+This is free and unencumbered software released into the public domain.
+___________________________________________________________________________________
+###################################################################################
+README for Wicket, Java EE and Spring Security Sample
+Last updated: Sep 9, 2013
+___________________________________________________________________________________
+###################################################################################
+# Prerequisites
+###################################################################################
+1. Internet access to retrieve dependencies from online Maven repo.
+2. Java SDK Version 7 or beyond installed to target environment
+3. Maven 3 installed to target environment
 
+___________________________________________________________________________________
+###################################################################################
+# Instructions for building and running the sample
+###################################################################################
+1. Download package: https://github.com/shawnmckinney/wicketsecurity/archive/master.zip
+2. Extract
+3. Set JAVA_HOME
+4. Set M2_Home
+5. Run the build from the root package:
+$ mvn install
+6. Start the Jetty Container
+Classname: com.mycompany.Start
+7. Go to this URL:
+http://localhost:8080/myproject
+8. Use the credentials defined in jetty-users.properties
 
-1. Create new Wicket Quickstart Project with Maven:
-
-mvn archetype:generate -DarchetypeGroupId=org.apache.wicket -DarchetypeArtifactId=wicket-archetype-quickstart -DarchetypeVersion=6.10.0 -DgroupId=com.mycompany -DartifactId=myproject -DarchetypeRepository=https://repository.apache.org/ -DinteractiveMode=false
-
-2. Create new project 'myproject' with your preferred IDE
-
-
-3. Update POM:
-
-4. Create a new file called jetty-user.properties and add the following lines:
-user1: password, ROLE_TEST1,ROLE_TEST2,ROLE_TEST3
-user2: password, ROLE_TEST2
-user3: password, ROLE_TEST3
-
-5. Add to Start.java:
-
-// Setup the test security realm, its name must match what's in the web.xml's 'realm-name' tag:
-HashLoginService dummyLoginService = new HashLoginService("MySecurityRealm");
-dummyLoginService.setConfig("src/test/resources/jetty-users.properties");
-bb.getSecurityHandler().setLoginService( dummyLoginService );
-server.setHandler(bb);
-
-6. 
-
-
-http://localhost:8080/wicket/bookmarkable/com.mycompany.Page1
-
-
-
-
-
-
-
+___________________________________________________________________________________
+###################################################################################
+# Sample Policy
+###################################################################################
+user1 can view all pages
+user2 can only view Page2
+user3 can only view Page3
